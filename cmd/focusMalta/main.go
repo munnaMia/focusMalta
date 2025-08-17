@@ -1,7 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"net/http"
+)
+
+type application struct{}
 
 func main() {
-	fmt.Println("Hello Maltas")
+	app := application{}
+
+	// contain  server configurations.
+	server := http.Server{
+		Addr:    "localhost:8080",
+		Handler: app.routes(),
+	}
+
+	err := server.ListenAndServe()
+	if err != nil {
+		log.Fatalln(err)
+	}
 }
