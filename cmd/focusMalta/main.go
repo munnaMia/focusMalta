@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"log/slog"
 	"net/http"
 	"os"
@@ -12,13 +13,21 @@ type application struct {
 }
 
 func main() {
-	// logger handlers
+
+	// addr flag for define the PORT address
+	addr := flag.String("addr", "localhost:8080", "HTTP network address")
+
+	// Parsing all the flags.
+	flag.Parse()
+
+	// Handle info logs
 	infoHanlder := slog.NewJSONHandler(
 		os.Stdout,
 		&slog.HandlerOptions{
 			Level: slog.LevelInfo,
 		})
 
+	// Handle error logs
 	errorHanlder := slog.NewJSONHandler(
 		os.Stdout,
 		&slog.HandlerOptions{
@@ -30,19 +39,19 @@ func main() {
 	infoLog := slog.New(infoHanlder)
 	errorLog := slog.New(errorHanlder)
 
-	// application dependencis
+	// application dependencies
 	app := &application{
 		InfoLog:  infoLog,
 		ErrorLog: errorLog,
 	}
 
-	// contain  server configurations.
+	// Containing server configurations.
 	server := http.Server{
-		Addr:    "localhost:8080",
+		Addr:    *addr,
 		Handler: app.routes(),
 	}
 
-	// Server Runing massage.
+	// Server Runing log massage.
 	infoLog.Info(
 		"Server Running",
 		slog.String("PORT", server.Addr),
