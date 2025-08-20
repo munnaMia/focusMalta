@@ -1,0 +1,5 @@
+.logo {
+    color: var(--logo-color);
+    font-size: var(--logo-font-size);
+    letter-spacing: var(--logo-letter-spacing);
+}

@@ -1,0 +1,48 @@
+nav > ul {
+    display: flex;
+    flex-direction: row;
+}
+
+nav > ul > li {
+    font-size: var(--menu-font-size);
+}
+
+nav > ul > li :last-child {
+    margin-right: 1rem;
+}
+
+nav > ul > li > a {
+    text-transform: capitalize;
+    margin-left: 3rem;
+    position: relative;
+    color: var(--secondary-color);
+    transition: color 0.2s ease;
+    transition: border 0.2 ease;
+}
+
+nav > ul > li > a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* for mobile display */
+@media (max-width: 768px) {
+    nav > ul > li :last-child {
+        margin-right: 0.8rem;
+    }
+    nav > ul > li > a {
+        margin-left: 1.2rem;
+    }
+}
+
+/* for smaller devices */
+@media (max-width: 375px) {
+    nav > ul > li :last-child {
+        margin-right: 0.4rem;
+    }
+    nav > ul > li > a {
+        margin-left: 0.7rem;
+    }
+}
+
+

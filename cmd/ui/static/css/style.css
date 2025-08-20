@@ -4,8 +4,21 @@
     padding: 0;
 }
 
-:root{
-/*add color shcema*/
+:root {
+    --background-color: #f8f9fa;
+    --primary-color: #007bff;
+    --secondary-color: #232323;
+    --logo-color: #121212;
+    --menu-font-size: 2rem;
+    --logo-font-size: 3rem;
+    --logo-letter-spacing: -2px;
+}
+
+@media (max-width:768px) {
+    :root{
+        --logo-font-size: 2rem;
+        --menu-font-size: 1.5rem;
+    }
 }
 
 html,
@@ -17,6 +30,19 @@ body {
 body {
     display: flex;
     flex-direction: column;
+    background-color: var(--background-color);
+    font-family: "Patrick Hand", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+main {
+    flex: 1;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
 }
 
 header {
@@ -24,33 +50,26 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 24px;
+    padding: 5px 24px;
     background-color: transparent;
     height: 10vh;
-    font-size: 1.5rem;
-}
-   
-
-main {
-    flex: 1; 
-    background-color: lightgreen;
-     display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 1.5rem;
 }
 
 footer {
     height: 8vh;
-    background-color: lightcoral;
+    background-color: var(--background-color);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
 }
 
-.font-special {
-    font-family: "Patrick Hand", cursive;
-    font-weight: 400;
-    font-style: normal;
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
 }
