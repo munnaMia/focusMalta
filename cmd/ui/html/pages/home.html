@@ -1,7 +1,22 @@
-{{define "title"}} home {{end}}
-
-{{define "main"}}
+{{define "title"}} home {{end}} {{define "main"}}
 <main>
-    <h1>This is home page</h1>
+    <div class="container">
+        <section class="timerDialog">
+            <div class="buttons">
+                <button class="button" id="focusBtn">Focus</button>
+                <button class="button" id="breakBtn">Break</button>
+                <button class="button" id="restBtn">Rest</button>
+            </div>
+            <div>
+                <span id="timer">00:00</span>
+                <button id="refreashBtn"><img src="/static/imgs/icons/refreash.png" alt="Refreash" /></button>
+            </div>
+            <div>
+                <button class="button" id="startBtn">Start</button>
+            </div>
+        </section>
+
+        <section class="tasksDialog"><p>test case</p></section>
+    </div>
 </main>
 {{end}}
