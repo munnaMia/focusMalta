@@ -16,13 +16,11 @@ nav > ul > li > a {
     margin-left: 3rem;
     position: relative;
     color: var(--secondary-color);
-    transition: color 0.2s ease;
-    transition: border 0.2 ease;
+    transition: color 0.1s ease;
 }
 
 nav > ul > li > a:hover {
     color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
 }
 
 /* for mobile display */

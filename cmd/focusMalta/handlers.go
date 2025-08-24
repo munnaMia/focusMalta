@@ -34,6 +34,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// GET - /about - handler
 func (app *application) about(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("about us"))
 }
